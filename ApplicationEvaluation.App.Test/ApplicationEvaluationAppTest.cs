@@ -1,5 +1,6 @@
 ﻿using ApplicationEvaluation.App.Models;
 using ApplicationEvaluation.App.Validators;
+using FluentAssertions;
 using Moq;
 
 namespace ApplicationEvaluation.App.Test
@@ -89,7 +90,8 @@ namespace ApplicationEvaluation.App.Test
             var result = applicationEvaluator.Evaulate(Application);
 
             //Assert
-            Assert.Equal(ApplicationResult.AutoRejected, result);
+            //Assert.Equal(ApplicationResult.AutoRejected, result);
+            result.Should().Be(ApplicationResult.AutoRejected);
         }
 
         [Fact]
@@ -122,7 +124,8 @@ namespace ApplicationEvaluation.App.Test
             var result = applicationEvaluator.Evaulate(Application);
 
             //Assert
-            Assert.Equal(ApplicationResult.AutoRejected, result);
+            //Assert.Equal(ApplicationResult.AutoRejected, result);
+            result.Should().Be(ApplicationResult.AutoRejected);
         }
     }
 }
